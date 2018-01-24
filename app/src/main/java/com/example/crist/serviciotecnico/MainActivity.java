@@ -1,6 +1,9 @@
 package com.example.crist.serviciotecnico;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,19 +21,38 @@ import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int PERMISO = 1;
     TextView txtDireccionIP;
     ImageButton btn_tecnico;
     ImageButton btn_cliente;
+    Button boton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtDireccionIP = findViewById(R.id.txt_ip);
 
+        //Solicita permiso de ubicación en caso de que no este ya concedido.
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+        } else {
+            solicitarPermiso();
+        }
+
+        txtDireccionIP = findViewById(R.id.txt_ip);
         btn_tecnico = findViewById(R.id.btn_tecnico);
         btn_cliente = findViewById(R.id.btn_cliente);
+        boton = (Button)findViewById(R.id.button);
+
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                        Intent wifiList;
+                        wifiList = new Intent(getApplicationContext(), Wifi.class);
+                        startActivity(wifiList);
+            }
+        });
 
 
     }
@@ -43,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
     public void onClickCliente(View v){
         Intent intent = new Intent(this, acceso_cliente.class);
         startActivity(intent);
+    }
+    private void solicitarPermiso() {
+        //Pide el permiso con un cuadro de dialogo del sistema
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISO);
     }
 
 }

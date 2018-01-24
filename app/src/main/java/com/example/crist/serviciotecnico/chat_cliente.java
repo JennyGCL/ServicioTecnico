@@ -30,7 +30,7 @@ public class chat_cliente extends AppCompatActivity {
     private Socket socket = null;
     private DataOutputStream out = null;
     private String mensaje = null;
-    private EscuchadorMensajes escuchador = null;
+    //private EscuchadorMensajes escuchador = null;
     private EditText cajaTexto = null;
     private RecyclerView rvChatList;
     private List<String> dataset = new ArrayList<String>();
@@ -43,8 +43,8 @@ public class chat_cliente extends AppCompatActivity {
         try {
             socket = new Socket("172.20.0.166",50000);
             out = new DataOutputStream(socket.getOutputStream());
-            escuchador = new EscuchadorMensajes(rvChatList, socket);
-            escuchador.start();
+            //escuchador = new EscuchadorMensajes(rvChatList, socket);
+           // escuchador.start();
         } catch (IOException ex) {
 
         }
