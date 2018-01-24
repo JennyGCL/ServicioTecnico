@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Servicio Tecnico</string>
+    <string name="AccesoTecnico">Acceso Técnico</string>
+    <string name="AccesoCliente">Acceso Cliente</string>
+    <string name="Ask">Escribir...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="NombreCliente">Nombre</string>
+    <string name="Acceder">Acceder</string>
+    <string name="NombreTecnico">Usuario</string>
+    <string name="ContraseniaTecnico">Contraseña</string>
+    <string name="DescargaManueales">Contraseña</string>
+</resources>
