@@ -4,12 +4,16 @@ import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.Adapter;
+import android.widget.EditText;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,18 +21,33 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
+import java.net.Socket;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class chat_cliente extends AppCompatActivity {
-    WebView webview;
-
-
+    private Socket socket = null;
+    private DataOutputStream out = null;
+    private String mensaje = null;
+    private EscuchadorMensajes escuchador = null;
+    private EditText cajaTexto = null;
+    private RecyclerView rvChatList;
+    private List<String> dataset = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_cliente);
+        rvChatList = findViewById(R.id.rv_chat);
+        try {
+            socket = new Socket("172.20.0.166",50000);
+            out = new DataOutputStream(socket.getOutputStream());
+            escuchador = new EscuchadorMensajes(rvChatList, socket);
+            escuchador.start();
+        } catch (IOException ex) {
 
+        }
     }
 
     @Override
