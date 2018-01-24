@@ -48,7 +48,6 @@
         android:layout_width="0dp"
         android:layout_height="545dp"
         android:layout_marginBottom="8dp"
-        android:background="#ebedef"
         android:clipToPadding="false"
         android:paddingEnd="20dp"
         android:paddingStart="20dp"
