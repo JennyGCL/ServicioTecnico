@@ -11,4 +11,5 @@
     <string name="NombreTecnico">Usuario</string>
     <string name="ContraseniaTecnico">Contraseña</string>
     <string name="DescargaManueales">Contraseña</string>
+    <string name="Enviar">Enviar</string>
 </resources>
