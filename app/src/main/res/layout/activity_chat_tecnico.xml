@@ -9,11 +9,10 @@
 
     <EditText
         android:id="@+id/et_search_box"
-        android:layout_width="295dp"
-        android:layout_height="43dp"
+        android:layout_width="348dp"
+        android:layout_height="42dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
         android:backgroundTint="#00FFFFFF"
         android:hint="@string/Ask"
         android:imeOptions="actionDone"
@@ -21,21 +20,17 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rv_chat"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="48dp"
         android:layout_height="43dp"
-        android:layout_alignTop="@+id/cardView"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/cardView"
         android:background="@color/colorPrimary"
         android:contentDescription="@string/Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,20 +44,19 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_chat"
-        android:layout_width="360dp"
-        android:layout_height="455dp"
+        android:layout_width="0dp"
+        android:layout_height="545dp"
         android:layout_marginBottom="8dp"
         android:clipToPadding="false"
         android:paddingEnd="20dp"
         android:paddingStart="20dp"
         android:paddingTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/et_search_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

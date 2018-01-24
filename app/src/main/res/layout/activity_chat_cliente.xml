@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,45 +7,56 @@
     android:background="#E0E0E0"
     tools:context=".chat_cliente">
 
+    <EditText
+        android:id="@+id/et_search_box"
+        android:layout_width="348dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="4dp"
+        android:backgroundTint="#00FFFFFF"
+        android:hint="@string/Ask"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_search_box"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/enviar" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_chat"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="20dp"
-        android:paddingStart="20dp"
+        android:layout_width="0dp"
+        android:layout_height="545dp"
+        android:layout_marginBottom="8dp"
+        android:clipToPadding="false"
         android:paddingEnd="20dp"
-        android:layout_marginBottom="60dp"
-        android:clipToPadding="false"/>
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_search_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="8dp">
-
-        <EditText
-            android:id="@+id/et_search_box"
-            android:layout_width="345dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#00FFFFFF"
-            android:hint="@string/Ask"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_alignTop="@+id/cardView"
-            android:layout_marginStart="350dp"
-            android:layout_toEndOf="@+id/cardView"
-            android:background="@color/colorPrimary"
-            android:contentDescription="@string/Enviar"
-            app:srcCompat="@drawable/enviar" />
-
-    </android.support.v7.widget.CardView>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
