@@ -10,6 +10,9 @@
     <string name="Acceder">Acceder</string>
     <string name="NombreTecnico">Usuario</string>
     <string name="ContraseniaTecnico">Contraseña</string>
-    <string name="DescargaManueales">Contraseña</string>
+    <string name="DescargaManuales">Contraseña</string>
     <string name="Enviar">Enviar</string>
+    <string name="acceder">Acceder</string>
+    <string name="wifi">WIFI</string>
+    <string name="todo">TODO</string>
 </resources>

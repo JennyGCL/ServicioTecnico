@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtDireccionIP;
     ImageButton btn_tecnico;
     ImageButton btn_cliente;
-    Button boton;
+    ImageButton btn_wifi;
 
 
     @Override
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         txtDireccionIP = findViewById(R.id.txt_ip);
         btn_tecnico = findViewById(R.id.btn_tecnico);
         btn_cliente = findViewById(R.id.btn_cliente);
-        boton = (Button)findViewById(R.id.button);
+        btn_wifi = (ImageButton)findViewById(R.id.btn_wifi);
 
-        boton.setOnClickListener(new View.OnClickListener() {
+        btn_wifi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                         Intent wifiList;
